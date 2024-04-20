@@ -1,0 +1,7 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(„•©¡8§ˆÔİï1
+n
+java:S1128	"QRemove this unused import 'org.springframework.cloud.gateway.route.RouteLocator'.(å€üØ8®ˆÔİï1
+|
+java:S1128
+"`Remove this unused import 'org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder'.(“›ó#8±ˆÔİï1

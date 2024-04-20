@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  config-service:
+    build: ./config-service
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./config-repo:/app/config-repo
+    container_name: 'config-service'
+
+  registry-service:
+    build: ./registry-service
+    ports:
+      - '8761:8761'
+    container_name: 'registry-service'
+    depends_on:
+      - config-service
+
+  gateway-service:
+    build: ./gateway-service
+    ports:
+      - '8765:8765'
+    container_name: 'gateway-service'
+    depends_on:
+    - registry-service
+
+#  document-service:
+#    build: ./document-service
+#    ports:
+#      - '8081:8081'
+#    expose:
+#      - '8081'
+#    container_name: 'document-service'
+#    depends_on:
+#      - gateway-service
+
